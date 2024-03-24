@@ -1,5 +1,4 @@
 # Appium test task for NDA project
-
 ___
 ### Software stack
 - [Java 17 LTS](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
@@ -11,6 +10,7 @@ ___
 - [TestNG](https://testng.org/doc/)
 ___
 NOTE: Date of `.apk` file release is 2019, so let's use Android 10 (or lower) for emulator, which was available at that moment:
+
 `Pixel_5_API_28`
 
 ![apkFileDate.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/apkFileDate.png)
