@@ -13,7 +13,7 @@ ___
 NOTE: Date of `.apk` file release is 2019, so let's use Android 10 (or lower) for emulator, which was available at that moment:
 `Pixel_5_API_28`
 
-![apkFileDate.png](src\main\resources\readme\apkFileDate.png)
+![apkFileDate.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/apkFileDate.png)
 
 #### Before test execution, run commands below using CMD to start Android emulator (Windows 10, 11):
 
@@ -23,16 +23,18 @@ cd C:\Users\*UserName*\AppData\Local\Android\Sdk\emulator
 .\emulator -avd Pixel_5_API_28
 ```
 Make sure Android emulator is up and running:
+
 ![adb.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/adb.png)
 
 #### Start Appium server:
 ```shell
  appium --address 127.0.0.1 --port 4727
 ```
-![appium.png](src\main\resources\readme\appium.png)
+![appium.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/appium.png)
 
 #### Configure Intellij IDEA build:
-![ideaConfig.png](src\main\resources\readme\ideaConfig.png)
+
+![ideaConfig.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/ideaConfig.png)
 
 ## Execution of tests:
 
@@ -52,7 +54,7 @@ Make sure Android emulator is up and running:
 
 `.\src\test\resources\features\SmokeTest.feature`
 
-![featureFile.png](src\main\resources\readme\featureFile.png)
+![featureFile.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/featureFile.png)
 
 ___
 ### List of application properties to be set before test run:
@@ -74,6 +76,6 @@ Report URL can be found in console output.
 
 Screenshot will be attached in case of failure.
 
-![reportUrl.png](src\main\resources\readme\reportUrl.png)
+![reportUrl.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/reportUrl.png)
 
-![reportExample.png](src\main\resources\readme\reportExample.png)
+![reportExample.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/reportExample.png)
