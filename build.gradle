@@ -1,0 +1,83 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.4'
+}
+
+apply plugin: "java"
+apply plugin: "io.freefair.lombok"
+def cucumberVer = '7.16.0'
+
+tasks.withType(JavaCompile).configureEach {
+    java.sourceCompatibility = JavaVersion.VERSION_17
+    java.targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.withType(Javadoc).configureEach { options.encoding = 'UTF-8' }
+repositories { mavenCentral() }
+
+tasks.withType(Test).tap {
+    configureEach {
+        testLogging {
+            events = ["failed", "skipped"]
+            exceptionFormat = TestExceptionFormat.FULL
+            showExceptions = true
+            showCauses = true
+            showStackTraces = true
+            showStandardStreams = true
+            info.events = ["failed", "skipped"]
+        }
+        testLogging.showStandardStreams = true
+    }
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.9.0'
+    implementation 'io.appium:java-client:9.0.0'
+
+    implementation 'org.assertj:assertj-core:3.25.3'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+
+    implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'org.awaitility:awaitility:4.2.0'
+    implementation 'org.aspectj:aspectjweaver:1.9.20.1'
+
+    implementation "io.cucumber:cucumber-java:$cucumberVer"
+    implementation "io.cucumber:cucumber-core:$cucumberVer"
+    implementation "io.cucumber:cucumber-testng:$cucumberVer"
+    implementation 'io.cucumber:gherkin:28.0.0'
+    implementation 'com.codeborne:selenide-appium:7.2.0'
+}
+
+tasks.register('smokeRun', Test) {
+    systemProperties(System.getProperties())
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+
+    useTestNG {
+        suites 'src/test/resources/suites/smoke_suite.xml'
+    }
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom implementation
+    }
+}
+
+tasks.register('cucumber') {
+    //use this cmd to run: ./gradlew clean cucumber -P tags=@smoke
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--tags', "${tags}", //or use custom tag: '--tags', "@smoke"
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:target/cucumber-report.html',
+                    '--glue', 'step.definitions', 'src/test/resources/features']
+        }
+    }
+}

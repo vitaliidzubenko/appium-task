@@ -1,0 +1,24 @@
+# Gradle
+.gradle/
+
+# JetBrains IDE
+.idea/
+build/
+target/
+out/
+
+# Applications
+*.app
+*.exe
+*.war
+*.iml
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+*.png
+*.html
