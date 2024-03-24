@@ -9,16 +9,18 @@ ___
 - [Selenide-Appium](https://github.com/selenide-examples/selenide-appium)
 - [TestNG](https://testng.org/)
 ___
-NOTE: Date of `.apk` file release is 2019, so let's use Android 10 (or lower) for emulator, which was available at that moment:
-
-`Pixel_5_API_28`
+NOTE: Date of `.apk` file release is 2019. At that time, `Android 10` was the latest version.
 
 ![apkFileDate.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/apkFileDate.png)
+
+Let's use `Android 10` (or lower) for emulator. For example: `Pixel_5_API_28` with `Android 9.0`.
+
+![apkFileDate.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/androidDeviceType.png)
 
 #### Before test execution, run commands below using CMD to start Android emulator (Windows 10, 11):
 
 ```shell
-cd C:\Users\*UserName*\AppData\Local\Android\Sdk\emulator
+cd C:\Users\~UserName~\AppData\Local\Android\Sdk\emulator
 .\emulator -list-avds
 .\emulator -avd Pixel_5_API_28
 ```
@@ -68,13 +70,13 @@ android.app.file.name=
 ios.app.file.name=
  ```
 
-can be found by path: `./src/main/resources/application.properties`
+Can be found by path: `./src/main/resources/application.properties`
 
 ___
 ### Cucumber Report generation
-Report URL can be found in console output.
-
-Screenshot will be attached in case of failure.
+- Cucumber Report will be generated automatically, after tests execution (based on the properties)
+- Report URL can be found in console output
+- Screenshot will be attached in case of failure
 
 ![reportUrl.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/reportUrl.png)
 
