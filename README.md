@@ -23,7 +23,7 @@ cd C:\Users\*UserName*\AppData\Local\Android\Sdk\emulator
 .\emulator -avd Pixel_5_API_28
 ```
 Make sure Android emulator is up and running:
-![adb.png](src\main\resources\readme\adb.png)
+![adb.png]([src\main\resources\readme\adb.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/adb.png))
 
 #### Start Appium server:
 ```shell
