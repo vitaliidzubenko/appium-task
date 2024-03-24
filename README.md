@@ -7,7 +7,7 @@ ___
 - [Android SDK](https://developer.android.com/studio)
 - [Appium 2.x](https://github.com/appium/appium)
 - [Selenide-Appium](https://github.com/selenide-examples/selenide-appium)
-- [TestNG](https://testng.org/doc/)
+- [TestNG](https://testng.org/)
 ___
 NOTE: Date of `.apk` file release is 2019, so let's use Android 10 (or lower) for emulator, which was available at that moment:
 
