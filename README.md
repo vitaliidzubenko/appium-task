@@ -44,15 +44,15 @@ Make sure Android emulator is up and running:
 
 2. By running via TestNG `.xml` file: 
 
-`.\src\test\resources\suites\smoke_suite.xml`
+`./src/test/resources/suites/smoke_suite.xml`
 
 3. By running via Cucumber Runner class: 
 
-`.\src\test\java\runners\SmokeTest.java`
+`./src/test/java/runners/SmokeTest.java`
 
 3. By running via Cucumber Feature file:
 
-`.\src\test\resources\features\SmokeTest.feature`
+`./src/test/resources/features/SmokeTest.feature`
 
 ![featureFile.png](https://github.com/vitaliidzubenko/appium-task/blob/main/src/main/resources/readme/featureFile.png)
 
@@ -68,7 +68,7 @@ android.app.file.name=
 ios.app.file.name=
  ```
 
-can be found by path: `.\src\main\resources\application.properties`
+can be found by path: `./src/main/resources/application.properties`
 
 ___
 ### Cucumber Report generation
