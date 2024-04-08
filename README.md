@@ -52,7 +52,7 @@ Make sure Android emulator is up and running:
 
 `./src/test/java/runners/SmokeTest.java`
 
-3. By running via Cucumber Feature file:
+4. By running via Cucumber Feature file:
 
 `./src/test/resources/features/SmokeTest.feature`
 
